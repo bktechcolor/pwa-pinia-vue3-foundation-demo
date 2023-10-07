@@ -1,11 +1,11 @@
 <template>
   <NavbarLayout />
   <main>
-    <div class="max-w-[1200px] mx-auto">
+    <div class="max-w-[1200px] mx-auto py-6">
       <router-view />
     </div>
   </main>
-  <BottomLayout/>
+  <BottomLayout />
 </template>
 
 <script setup>

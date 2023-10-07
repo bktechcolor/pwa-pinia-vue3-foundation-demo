@@ -4,6 +4,8 @@ import HomePage from '../views/HomePage.vue'
 import WorkerList  from '../components/WorkerlList.vue'
 import GuestLayout  from '../components/GuestLayout.vue'
 import AddMeal  from '../views/AddMeal.vue'
+import AboutPage  from '../views/AboutPage.vue'
+import MealById  from '../views/MealById.vue'
 const routes = [
     {
       path: '/',
@@ -15,6 +17,11 @@ const routes = [
           component: HomePage,
         },
         {
+          path:"/about-app",
+          name:"AboutPage",
+          component: AboutPage
+        },
+        {
             path: "/worker-list",
             name: "WorkerList",
             component: WorkerList 
@@ -23,6 +30,11 @@ const routes = [
             path: '/add-meal',
             name: 'AddMeal',
             component: AddMeal
+        },
+        {
+            path: '/meal-by-id/:id?',
+            name: 'MealById',
+            component: MealById
         }
       ]
     },

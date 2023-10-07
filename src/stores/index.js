@@ -5,22 +5,22 @@ export const useTaskStore = defineStore('taskStore',{
         meals:[]
     }),
     getters:{
-        getMeals(){
+        storeGetAllMeals(){
             return this.meals
         }
     },
     actions:{
-        async getAll(){
-            await MealsDataService.getAll().then( res => {
+        async getAllMealAsync(){
+            await MealsDataService.getAllMealAsync().then( res => {
                 res.forEach(doc=>{
-                  this.meals.push(doc.data())
+                    this.meals.push(doc.data())
                 })
                 }).catch(error=>{
                     throw new Error(error.message + "Fail to fetch meals data")
                 })
         },
-        async addMeal(meal){
-            await MealsDataService.create(meal)
+        async addMealAsync(meal){
+            await MealsDataService.addMealAsync(meal)
             .then(res=> {
                 if(res){
                     this.meals.push(meal)
@@ -31,7 +31,7 @@ export const useTaskStore = defineStore('taskStore',{
                 throw new Error(err.message + "Could not add new meal")
             })
         },
-        async deleteMeal(id){
+        async deleteMealAsync(id){
             await MealsDataService.delete(id)
         }
     }

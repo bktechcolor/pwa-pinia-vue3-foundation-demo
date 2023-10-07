@@ -1,7 +1,8 @@
 import { createApp } from 'vue'
 import * as filters from './filters'
-import '../src/assets/index.css'
 import '../src/assets/style.css'
+import '../src/assets/index.css'
+
 import { createPinia } from 'pinia'
 import router from './router/index'
 import { IonicVue } from '@ionic/vue';
